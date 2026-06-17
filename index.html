@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hirachand Chordia Eye Hospital | Chennai</title>
+  <meta name="description" content="Affordable, effective eye care for everyone. Serving Chennai since 1977. Cataract, glaucoma, retina, refractive surgery and more at Sowcarpet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* ── TOKENS ─────────────────────────────────── */
+    :root {
+      --navy:       #0E2340;
+      --navy-mid:   #162E52;
+      --gold:       #C8922A;
+      --gold-light: #E8C47A;
+      --ivory:      #F5F0E8;
+      --ivory-dark: #E8E0D0;
+      --teal:       #1A5C52;
+      --charcoal:   #2C2C2C;
+      --muted:      #6B7280;
+      --white:      #FFFFFF;
+      --r-sm: 4px;
+      --r-md: 8px;
+    }
+
+    /* ── RESET ───────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(200,146,42,0.2);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 600;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ivory);
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+    }
+    .nav-logo-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: var(--gold);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(245,240,232,0.65);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+      padding: 0.45rem 1.1rem !important;
+      border-radius: var(--r-sm) !important;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ivory);
+      transition: opacity 0.2s;
+    }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 55% at 50% 38%, rgba(200,146,42,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.2s ease-out forwards;
+    }
+    /* SIGNATURE: blur-to-clarity */
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 300;
+      line-height: 1.06;
+      color: var(--ivory);
+      letter-spacing: -0.01em;
+      max-width: 860px;
+      filter: blur(8px);
+      opacity: 0;
+      animation: clarify 1.4s 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-sub {
+      margin-top: 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(245,240,232,0.6);
+      max-width: 460px;
+      line-height: 1.75;
+      opacity: 0;
+      animation: fadeUp 0.6s 1.2s ease-out forwards;
+    }
+    .hero-actions {
+      margin-top: 2.25rem;
+      display: flex;
+      gap: 0.875rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 0.6s 1.4s ease-out forwards;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.8rem 1.875rem;
+      border-radius: var(--r-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-outline {
+      border: 1px solid rgba(245,240,232,0.25);
+      color: rgba(245,240,232,0.85);
+      padding: 0.8rem 1.875rem;
+      border-radius: var(--r-sm);
+      font-size: 0.9rem;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(200,146,42,0.07); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: rgba(245,240,232,0.3);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 0.6s 1.8s ease-out forwards;
+    }
+
+    /* ── MISSION ──────────────────────────────────── */
+    .mission {
+      background: var(--ivory);
+      padding: 5.5rem 2rem;
+      text-align: center;
+    }
+    .mono-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+    .mission-statement {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.22;
+      color: var(--navy);
+      max-width: 760px;
+      margin: 0 auto 1.75rem;
+    }
+    .mission-statement em { font-style: italic; color: var(--gold); }
+    .mission-body {
+      font-size: 0.975rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 2.75rem;
+      line-height: 1.8;
+    }
+    .mission-trust {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      padding-top: 2rem;
+      border-top: 1px solid var(--ivory-dark);
+      display: inline-block;
+    }
+
+    /* ── STATS ────────────────────────────────────── */
+    .stats {
+      background: var(--navy);
+      padding: 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid rgba(200,146,42,0.18);
+    }
+    .stat-item {
+      padding: 2.75rem 2rem;
+      text-align: center;
+      border-right: 1px solid rgba(200,146,42,0.12);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .stat-unit {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: rgba(245,240,232,0.35);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+      display: block;
+    }
+    .stat-desc {
+      font-size: 0.82rem;
+      color: rgba(245,240,232,0.5);
+      margin-top: 0.6rem;
+      line-height: 1.45;
+    }
+
+    /* ── SECTION HEADER ───────────────────────────── */
+    .sec-head {
+      text-align: center;
+      margin-bottom: 3.25rem;
+    }
+    .sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    /* ── SERVICES ─────────────────────────────────── */
+    .services {
+      background: var(--white);
+      padding: 5.5rem 2rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      max-width: 1080px;
+      margin: 0 auto;
+      background: var(--ivory-dark);
+    }
+    .svc-item {
+      background: var(--white);
+      padding: 1.875rem 1.75rem;
+      transition: background 0.18s;
+    }
+    .svc-item:hover { background: var(--ivory); }
+    .svc-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--gold);
+      margin-bottom: 0.875rem;
+    }
+    .svc-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+      line-height: 1.2;
+    }
+    .svc-desc {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── TEAM ─────────────────────────────────────── */
+    .team {
+      background: var(--ivory);
+      padding: 5.5rem 2rem;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      max-width: 880px;
+      margin: 0 auto 2.5rem;
+    }
+    .doc-card {
+      background: var(--white);
+      border: 1px solid var(--ivory-dark);
+      padding: 1.875rem;
+      border-radius: var(--r-md);
+    }
+    .doc-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+    .doc-creds {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.25rem;
+    }
+    .doc-role {
+      font-size: 0.75rem;
+      color: var(--teal);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .doc-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.65;
+      border-left: 2px solid var(--gold);
+      padding-left: 0.875rem;
+    }
+    .visiting-block {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .visiting-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--ivory-dark);
+      margin-bottom: 1.25rem;
+    }
+    .visiting-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .vis-name {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--navy);
+    }
+    .vis-spec {
+      font-size: 0.75rem;
+      color: var(--teal);
+      letter-spacing: 0.04em;
+      margin-top: 0.15rem;
+    }
+
+    /* ── STORIES ──────────────────────────────────── */
+    .stories {
+      background: var(--navy);
+      padding: 5.5rem 2rem;
+    }
+    .stories .sec-title { color: var(--ivory); }
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .story-card {
+      background: rgba(245,240,232,0.04);
+      border: 1px solid rgba(200,146,42,0.15);
+      padding: 1.875rem;
+      border-radius: var(--r-md);
+    }
+    .story-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(245,240,232,0.82);
+      line-height: 1.7;
+      margin-bottom: 1.375rem;
+    }
+    .story-author {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .story-cond {
+      font-size: 0.75rem;
+      color: rgba(245,240,232,0.35);
+      margin-top: 0.2rem;
+    }
+
+    /* ── PRICING ──────────────────────────────────── */
+    .pricing {
+      background: var(--white);
+      padding: 5.5rem 2rem;
+    }
+    .pricing-intro {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .pricing-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      border: 1px solid var(--ivory-dark);
+      border-radius: var(--r-md);
+      overflow: hidden;
+    }
+    .pricing-cat {
+      background: var(--navy);
+      padding: 0.7rem 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .ptable {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .ptable th {
+      background: var(--ivory);
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.65rem 1.5rem;
+      text-align: left;
+      font-weight: 400;
+      border-bottom: 1px solid var(--ivory-dark);
+    }
+    .ptable th:last-child { text-align: right; }
+    .ptable td {
+      padding: 0.7rem 1.5rem;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(232,224,208,0.6);
+      color: var(--charcoal);
+      vertical-align: middle;
+    }
+    .ptable tr:last-child td { border-bottom: none; }
+    .ptable tr:nth-child(even) td { background: rgba(245,240,232,0.45); }
+    .ptable .iol { color: var(--muted); }
+    .ptable .proc { font-weight: 500; }
+    .ptable .price {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--teal);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .pricing-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 1.25rem;
+      font-style: italic;
+    }
+
+    /* ── EQUIPMENT ────────────────────────────────── */
+    .equipment {
+      background: var(--ivory);
+      padding: 5.5rem 2rem;
+    }
+    .equip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .equip-item {
+      background: var(--white);
+      border: 1px solid var(--ivory-dark);
+      padding: 1.75rem;
+      border-radius: var(--r-md);
+    }
+    .equip-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .equip-desc {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── DONATE ───────────────────────────────────── */
+    .donate {
+      background: var(--teal);
+      padding: 5.5rem 2rem;
+      text-align: center;
+    }
+    .donate .sec-title { color: var(--ivory); }
+    .donate .mono-label { color: rgba(245,240,232,0.55); }
+    .donate-body {
+      font-size: 0.975rem;
+      color: rgba(245,240,232,0.7);
+      max-width: 500px;
+      margin: 1rem auto 2.25rem;
+      line-height: 1.8;
+    }
+    .donate-highlight {
+      background: rgba(245,240,232,0.1);
+      border: 1px solid rgba(245,240,232,0.18);
+      border-radius: var(--r-md);
+      padding: 1.1rem 2rem;
+      display: inline-block;
+      margin-bottom: 2.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--ivory);
+    }
+    .donate-highlight strong { color: var(--gold-light); }
+    .donate-areas {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 860px;
+      margin: 0 auto 2.5rem;
+    }
+    .donate-area {
+      background: rgba(245,240,232,0.08);
+      border: 1px solid rgba(245,240,232,0.12);
+      border-radius: var(--r-md);
+      padding: 1.4rem 1rem;
+    }
+    .donate-area-name {
+      font-weight: 600;
+      color: var(--ivory);
+      font-size: 0.875rem;
+      margin-bottom: 0.4rem;
+    }
+    .donate-area-desc {
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.5);
+      line-height: 1.5;
+    }
+    .btn-primary-light {
+      background: var(--ivory);
+      color: var(--teal);
+      padding: 0.8rem 1.875rem;
+      border-radius: var(--r-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-primary-light:hover { background: var(--gold-light); color: var(--navy); }
+
+    /* ── CONTACT / FOOTER ─────────────────────────── */
+    .contact {
+      background: var(--navy);
+      padding: 5rem 2rem 0;
+    }
+    .contact-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(200,146,42,0.15);
+    }
+    .contact-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--ivory);
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+    .contact-brand-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .contact-brand-vision {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(245,240,232,0.45);
+      line-height: 1.65;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .cd-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .cd-value {
+      font-size: 0.925rem;
+      color: rgba(245,240,232,0.75);
+      line-height: 1.55;
+    }
+    .cd-value a:hover { color: var(--gold); }
+    .cd-note {
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.4);
+      margin-top: 0.2rem;
+      line-height: 1.5;
+    }
+    .footer-bar {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: rgba(245,240,232,0.28);
+    }
+
+    /* ── ANIMATIONS ───────────────────────────────── */
+    @keyframes clarify {
+      from { filter: blur(8px); opacity: 0; }
+      to   { filter: blur(0);   opacity: 1; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-title, .hero-eyebrow, .hero-sub, .hero-actions, .hero-scroll {
+        animation: none; filter: none; opacity: 1;
+      }
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 960px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(1),
+      .stat-item:nth-child(2) { border-bottom: 1px solid rgba(200,146,42,0.12); }
+      .stat-item:nth-child(3) { border-right: 1px solid rgba(200,146,42,0.12); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: 1fr; }
+      .visiting-grid { grid-template-columns: repeat(2, 1fr); }
+      .stories-grid { grid-template-columns: 1fr; }
+      .equip-grid { grid-template-columns: repeat(2, 1fr); }
+      .donate-areas { grid-template-columns: repeat(2, 1fr); }
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none !important; border-bottom: 1px solid rgba(200,146,42,0.12) !important; }
+      .stat-item:last-child { border-bottom: none !important; }
+      .equip-grid { grid-template-columns: 1fr; }
+      .donate-areas { grid-template-columns: 1fr; }
+      .visiting-grid { grid-template-columns: 1fr; }
+      .footer-bar { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .ptable th, .ptable td { padding: 0.6rem 1rem; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="#home" class="nav-logo" aria-label="Hirachand Chordia Eye Hospital home">
+    <div class="nav-logo-mark" aria-hidden="true">HC</div>
+    <div>
+      <div class="nav-logo-name">Hirachand Chordia Eye Hospital</div>
+      <div class="nav-logo-sub">Chennai · Est. 1977</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#team">Doctors</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#stories">Patients</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="mailto:hceh@chordia.asia" class="nav-cta">Book Appointment</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home" aria-label="Welcome to Hirachand Chordia Eye Hospital">
+  <p class="hero-eyebrow">Sowcarpet, Chennai · Since 1977</p>
+  <h1 class="hero-title">
+    Hirachand Chordia<br><em>Eye Hospital</em>
+  </h1>
+  <p class="hero-sub">
+    Affordable, effective eye care for everyone —
+    serving Chennai's families for nearly five decades.
+  </p>
+  <div class="hero-actions">
+    <a href="mailto:hceh@chordia.asia" class="btn-primary">Book an Appointment</a>
+    <a href="#services" class="btn-outline">Explore Services</a>
+  </div>
+  <p class="hero-scroll" aria-hidden="true">Est. 1977</p>
+</section>
+
+<!-- MISSION -->
+<section class="mission" id="mission">
+  <span class="mono-label">Our Purpose</span>
+  <h2 class="mission-statement">
+    <em>Affordable, Effective Eyecare</em><br>for Everyone.
+  </h2>
+  <p class="mission-body">
+    Founded in 1977 by the Siremull Hirachand Charitable Trust, this hospital was built on a single conviction: quality eye care should not be a privilege. Nearly 50 years on, that conviction drives every consultation, every surgery, every pair of glasses we provide — at cost, or free, to whoever needs it.
+  </p>
+  <span class="mission-trust">Managed by Siremull Hirachand Charitable Trust</span>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Hospital at a glance">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-number">175–200</span>
+      <span class="stat-unit">Patients / Day</span>
+      <p class="stat-desc">Most from low- and middle-income families across Chennai</p>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">~200</span>
+      <span class="stat-unit">Surgeries / Month</span>
+      <p class="stat-desc">Advanced micro-surgery at subsidized costs</p>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">250+</span>
+      <span class="stat-unit">Free Surgeries / Year</span>
+      <p class="stat-desc">Performed at no cost for those who cannot afford care</p>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">47</span>
+      <span class="stat-unit">Years of Service</span>
+      <p class="stat-desc">4 doctors, 26 staff — a team built on mission, not margin</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="sec-head">
+    <span class="mono-label">What We Offer</span>
+    <h2 class="sec-title">Comprehensive Eye Care</h2>
+  </div>
+  <div class="services-grid" role="list">
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="6"/><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/></svg>
+      <p class="svc-name">Comprehensive Eye Checkup</p>
+      <p class="svc-desc">Computerised examination covering vision, intraocular pressure, and full eye health assessment.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+      <p class="svc-name">Cataract Micro Surgery</p>
+      <p class="svc-desc">Phaco emulsification with foldable IOL implantation. Day procedures, rapid recovery.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C6.48 2 2 7 2 12s4.48 10 10 10 10-5 10-10S17.52 2 12 2z"/><path d="M12 8v4l3 3"/></svg>
+      <p class="svc-name">Glaucoma Surgery</p>
+      <p class="svc-desc">Trabeculectomy and YAG laser iridectomy for effective pressure management.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      <p class="svc-name">Retina Speciality Clinic</p>
+      <p class="svc-desc">Diagnosis and laser treatment for diabetic retinopathy, retinal detachment, and macular disease.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M12 4l8 8-8 8"/></svg>
+      <p class="svc-name">Refractive Surgery</p>
+      <p class="svc-desc">Precise correction of short-sightedness, long-sightedness, and astigmatism.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>
+      <p class="svc-name">Paediatric Ophthalmology</p>
+      <p class="svc-desc">Squint correction, amblyopia treatment, and early vision screening for children.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <p class="svc-name">YAG Laser Procedures</p>
+      <p class="svc-desc">Capsulotomy for post-cataract clouding and iridectomy for angle-closure glaucoma.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+      <p class="svc-name">OCT Imaging</p>
+      <p class="svc-desc">Optical coherence tomography for detailed cross-section imaging of the retina.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 2v20M18 2v20M2 8h20M2 16h20"/></svg>
+      <p class="svc-name">Retinal Laser Treatment</p>
+      <p class="svc-desc">Iridex green laser therapy for blinding retinal diseases including diabetic retinopathy.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M2 12h4M18 12h4M12 2v4M12 18v4"/></svg>
+      <p class="svc-name">Optical Biometry</p>
+      <p class="svc-desc">Zeiss IOL Master 700 — precise lens power calculation before cataract surgery.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+      <p class="svc-name">Visual Field Analysis</p>
+      <p class="svc-desc">Octopus automated perimetry to map and track glaucoma progression over time.</p>
+    </div>
+
+    <div class="svc-item" role="listitem">
+      <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="3"/><circle cx="15" cy="12" r="3"/><path d="M3 12h3M18 12h3"/></svg>
+      <p class="svc-name">Opticals &amp; Contact Lens</p>
+      <p class="svc-desc">Prescription glasses and contact lenses at affordable rates, fitted on-site.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="sec-head">
+    <span class="mono-label">The Doctors</span>
+    <h2 class="sec-title">Consultants</h2>
+  </div>
+  <div class="team-grid">
+    <div class="doc-card">
+      <p class="doc-name">Dr. M.J. Sudarshan</p>
+      <p class="doc-creds">MBBS · DOMS · DNB</p>
+      <p class="doc-role">Medical Director</p>
+      <blockquote class="doc-quote">"I am inspired by the trust because they don't chase numbers. Even if we only have ten patients a month, what matters is making sure they all receive good treatment."</blockquote>
+    </div>
+    <div class="doc-card">
+      <p class="doc-name">Dr. R.M. Meenakshi</p>
+      <p class="doc-creds">MBBS · DO</p>
+      <p class="doc-role">Consultant Ophthalmologist</p>
+      <blockquote class="doc-quote">"I would recommend this hospital to young ophthalmologists — they can attend to a variety of cases and work in an ethical, encouraging environment."</blockquote>
+    </div>
+    <div class="doc-card">
+      <p class="doc-name">Dr. S. Ranjini Priya</p>
+      <p class="doc-creds">MBBS · DO · DNB</p>
+      <p class="doc-role">Consultant Ophthalmologist</p>
+      <blockquote class="doc-quote">"Each doctor sees about 50 patients a day, and I'm happy that I get to attend to a variety of cases. The patient-doctor relationship is also very good."</blockquote>
+    </div>
+    <div class="doc-card">
+      <p class="doc-name">Dr. S. Premanand</p>
+      <p class="doc-creds">MS · DO</p>
+      <p class="doc-role">Consultant Ophthalmologist</p>
+      <blockquote class="doc-quote">"All of us work as a team and focus on helping our patients get better."</blockquote>
+    </div>
+  </div>
+
+  <div class="visiting-block">
+    <p class="visiting-label">Visiting Consultants</p>
+    <div class="visiting-grid">
+      <div>
+        <p class="vis-name">Dr. Vasumathi Vedantham</p>
+        <p class="vis-spec">MS · DNB · FRCS — Retina Specialist</p>
+      </div>
+      <div>
+        <p class="vis-name">Dr. Mridhula Sekar</p>
+        <p class="vis-spec">MBBS · MS · FVRS · FAICO — Retina Specialist</p>
+      </div>
+      <div>
+        <p class="vis-name">Dr. Sanjeev P. Srinivas</p>
+        <p class="vis-spec">DNB · FACS — Cornea Specialist</p>
+      </div>
+      <div>
+        <p class="vis-name">Dr. Jayanthi</p>
+        <p class="vis-spec">MBBS · DA — Anaesthetist</p>
+      </div>
+      <div>
+        <p class="vis-name">Dr. K. Prasad</p>
+        <p class="vis-spec">MD — General Physician</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section class="stories" id="stories">
+  <div class="sec-head">
+    <span class="mono-label">Patient Stories</span>
+    <h2 class="sec-title">In Their Own Words</h2>
+  </div>
+  <div class="stories-grid">
+    <div class="story-card">
+      <p class="story-quote">"When I came here for cataract surgery, I was asked to lie down and then, after a few minutes, to get up. I didn't feel any pain."</p>
+      <p class="story-author">Usha, 50</p>
+      <p class="story-cond">Cataract Surgery</p>
+    </div>
+    <div class="story-card">
+      <p class="story-quote">"I had glaucoma, which is cleared now. Four people from my family have been here for treatment. The doctors take time to examine. The staff treat us respectfully and the hospital is clean."</p>
+      <p class="story-author">Yashoda, 63</p>
+      <p class="story-cond">Glaucoma Treatment</p>
+    </div>
+    <div class="story-card">
+      <p class="story-quote">"I have been visiting this hospital for 25 years, and I have always received good treatment and care. The doctors take personal interest."</p>
+      <p class="story-author">Kapur, 75</p>
+      <p class="story-cond">Long-term Patient</p>
+    </div>
+    <div class="story-card">
+      <p class="story-quote">"My family had eye surgeries here. The spectacles they provide are good and affordable. I have been receiving care from this hospital for a long time."</p>
+      <p class="story-author">Naga, 58</p>
+      <p class="story-cond">Opticals &amp; Surgery</p>
+    </div>
+    <div class="story-card">
+      <p class="story-quote">"The doctors and staff even remember the patients! Everyone is efficient and we are never asked to come back later even if they are busy."</p>
+      <p class="story-author">Ivan, 14</p>
+      <p class="story-cond">Vision Correction</p>
+    </div>
+    <div class="story-card">
+      <p class="story-quote">"I visited the hospital for an eye test. Even when there are a lot of patients, we get to see the doctor fast."</p>
+      <p class="story-author">Yogasree, 5</p>
+      <p class="story-cond">Eye Examination</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="sec-head">
+    <span class="mono-label">Transparent Pricing</span>
+    <h2 class="sec-title">Surgery Charges</h2>
+  </div>
+  <p class="pricing-intro">We publish our charges openly — because affordable care means knowing what to expect before you walk in. All costs are all-inclusive. Free surgeries are available for those who need them.</p>
+  <div class="pricing-wrap">
+    <div class="pricing-cat">Phaco with Foldable IOL Implantation</div>
+    <table class="ptable" aria-label="Cataract surgery pricing">
+      <thead><tr><th>IOL Type</th><th>All-inclusive Cost</th></tr></thead>
+      <tbody>
+        <tr><td class="iol">Indian IOL</td><td class="price">₹ 10,000</td></tr>
+        <tr><td class="iol">Indian Hydrophobic</td><td class="price">₹ 16,500</td></tr>
+        <tr><td class="iol">Indian Hydrophobic Yellow Acrylic</td><td class="price">₹ 19,000</td></tr>
+        <tr><td class="iol">Imported 3-piece</td><td class="price">₹ 24,500</td></tr>
+        <tr><td class="iol">Imported Spherical</td><td class="price">₹ 23,000</td></tr>
+        <tr><td class="iol">Imported Aspheric</td><td class="price">₹ 26,000</td></tr>
+        <tr><td class="iol">Imported Blue-blocking Aspheric</td><td class="price">₹ 27,500</td></tr>
+        <tr><td class="iol">Toric — Indian</td><td class="price">₹ 25,500</td></tr>
+        <tr><td class="iol">Toric — Imported</td><td class="price">₹ 41,500</td></tr>
+        <tr><td class="iol">Premium Aspheric Yellow (Imported)</td><td class="price">₹ 33,500</td></tr>
+        <tr><td class="iol">Premium Monofocal Enhanced Vision (Imported)</td><td class="price">₹ 36,500</td></tr>
+        <tr><td class="iol">Indian Trifocal (Hydrophobic)</td><td class="price">₹ 46,500</td></tr>
+        <tr><td class="iol">Imported Trifocal</td><td class="price">₹ 66,500</td></tr>
+        <tr><td class="iol">Imported EDOF</td><td class="price">₹ 66,500</td></tr>
+        <tr><td class="iol">Indian Trifocal Toric</td><td class="price">₹ 53,500</td></tr>
+        <tr><td class="iol">Imported Trifocal Toric</td><td class="price">₹ 76,500</td></tr>
+        <tr><td class="iol">Imported EDOF Toric</td><td class="price">₹ 76,500</td></tr>
+      </tbody>
+    </table>
+    <div class="pricing-cat">Other Procedures</div>
+    <table class="ptable" aria-label="Other surgery pricing">
+      <thead><tr><th>Procedure</th><th>All-inclusive Cost</th></tr></thead>
+      <tbody>
+        <tr><td class="proc">Trabeculectomy Surgery</td><td class="price">₹ 15,000</td></tr>
+        <tr><td class="proc">Pterygium Surgery with Autograft</td><td class="price">₹ 10,000</td></tr>
+        <tr><td class="proc">ECCE / SICS with IOL Implantation</td><td class="price">₹ 16,500</td></tr>
+        <tr><td class="proc">Automated Vitrectomy</td><td class="price" style="color:var(--muted)">Contact us</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="pricing-note">Free surgeries available for patients who cannot afford treatment — no patient is turned away. Contact us to learn more.</p>
+</section>
+
+<!-- EQUIPMENT -->
+<section class="equipment" id="equipment">
+  <div class="sec-head">
+    <span class="mono-label">Our Technology</span>
+    <h2 class="sec-title">Advanced Equipment</h2>
+  </div>
+  <div class="equip-grid">
+    <div class="equip-item">
+      <p class="equip-name">Zeiss IOL Master 700</p>
+      <p class="equip-desc">Gold-standard optical biometry for accurate intraocular lens power calculation before cataract surgery.</p>
+    </div>
+    <div class="equip-item">
+      <p class="equip-name">Nidek OCT</p>
+      <p class="equip-desc">Colour fundus photography and cross-section retinal imaging for detailed study of retinal layers.</p>
+    </div>
+    <div class="equip-item">
+      <p class="equip-name">Iridex Green Laser</p>
+      <p class="equip-desc">Effective treatment of retinal blinding diseases including diabetic retinopathy.</p>
+    </div>
+    <div class="equip-item">
+      <p class="equip-name">Octopus Perimeter</p>
+      <p class="equip-desc">Automated visual field mapping — the critical tool for monitoring and diagnosing glaucoma.</p>
+    </div>
+    <div class="equip-item">
+      <p class="equip-name">Air Puff Tonometer</p>
+      <p class="equip-desc">Non-contact intraocular pressure measurement — precise, safe, and comfortable for patients.</p>
+    </div>
+    <div class="equip-item">
+      <p class="equip-name">Biometry Ultrasound</p>
+      <p class="equip-desc">Ultrasound lens power estimation for patients where optical biometry is not suitable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="donate" id="donate">
+  <span class="mono-label">Support the Mission</span>
+  <h2 class="sec-title">How You Can Help</h2>
+  <p class="donate-body">Every year, 200–250 surgeries are performed here at no cost to the patient. Your support helps us expand this work and serve more families who cannot afford to lose their sight.</p>
+  <div class="donate-highlight">
+    Sponsor free cataract surgery for one full year — <strong>₹ 5,00,000</strong>
+  </div>
+  <div class="donate-areas">
+    <div class="donate-area">
+      <p class="donate-area-name">Real Estate</p>
+      <p class="donate-area-desc">Help expand to a 16,000 sq.ft. facility — four times our current size</p>
+    </div>
+    <div class="donate-area">
+      <p class="donate-area-name">Equipment</p>
+      <p class="donate-area-desc">Procure high-quality diagnostic and surgical equipment</p>
+    </div>
+    <div class="donate-area">
+      <p class="donate-area-name">Free Surgery</p>
+      <p class="donate-area-desc">Fund cataract surgeries for patients who cannot afford treatment</p>
+    </div>
+    <div class="donate-area">
+      <p class="donate-area-name">Staff</p>
+      <p class="donate-area-desc">Support salaries and benefits for a mission-driven team</p>
+    </div>
+  </div>
+  <a href="mailto:hceh@chordia.asia" class="btn-primary-light">Get in Touch to Donate</a>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <p class="contact-brand-name">Hirachand Chordia<br>Eye Hospital</p>
+      <p class="contact-brand-tag">Chennai · Est. 1977</p>
+      <p class="contact-brand-vision">"Affordable, Effective Eyecare<br>for Everyone."</p>
+    </div>
+    <div class="contact-details">
+      <div>
+        <p class="cd-label">Address</p>
+        <p class="cd-value">28, Kandappa Street<br>Sowcarpet, Chennai — 600 079</p>
+      </div>
+      <div>
+        <p class="cd-label">Email</p>
+        <p class="cd-value"><a href="mailto:hceh@chordia.asia">hceh@chordia.asia</a></p>
+      </div>
+      <div>
+        <p class="cd-label">Emergency Trauma Care</p>
+        <p class="cd-value">Available — contact us directly</p>
+      </div>
+      <div>
+        <p class="cd-label">Managed by</p>
+        <p class="cd-value">Siremull Hirachand Charitable Trust</p>
+        <p class="cd-note">Trustees: Loonchand, Vijay P., Diiliip, Rangroop, Hemant, Pradeep, Kailash, Devang &amp; Nirmal Chordia</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2026 Hirachand Chordia Eye Hospital. All rights reserved.</span>
+    <span>Siremull Hirachand Charitable Trust</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  const toggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  let open = false;
+  toggle.addEventListener('click', () => {
+    open = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) {
+      navLinks.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--navy);padding:1rem 2rem 1.5rem;gap:0.875rem;border-bottom:1px solid rgba(200,146,42,0.2);';
+    } else {
+      navLinks.style.cssText = 'display:none;';
+    }
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    open = false;
+    toggle.setAttribute('aria-expanded', 'false');
+    navLinks.style.cssText = 'display:none;';
+  }));
+
+  // Nav background on scroll
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 1px 24px rgba(0,0,0,0.35)' : 'none';
+  }, { passive: true });
+</script>
+</body>
+</html>
