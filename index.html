@@ -1335,6 +1335,9 @@
     // Donor recognition
     stagger('.rec-grid', '.rec-card', 'rv-up', 80);
 
+    // Optical & Pharmacy panels
+    document.querySelectorAll('.anc-panel').forEach(el => io.observe(el));
+
     // Donate areas
     stagger('.donate-areas', '.donate-area', 'rv-up', 65);
   })();
