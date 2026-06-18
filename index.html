@@ -122,8 +122,9 @@
       animation: clarify 1.4s 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
     }
     .hero-title em { font-style: italic; color: var(--gold); }
-    .hero-name { margin-top: 1.25rem; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 2.8vw, 2.1rem); font-weight: 400; letter-spacing: 0.03em; color: rgba(245,240,232,0.78); opacity: 0; animation: fadeUp 0.6s 1.2s ease-out forwards; }
-    .hero-name span { font-family: 'DM Mono', monospace; font-size: 0.6em; letter-spacing: 0.16em; color: rgba(245,240,232,0.38); vertical-align: middle; }
+    .hero-nameplate { display: inline-block; border: 1px solid rgba(200,146,42,0.35); border-radius: 4px; padding: 0.65rem 1.4rem 0.7rem; margin-bottom: 1.75rem; background: rgba(200,146,42,0.05); opacity: 0; animation: fadeUp 0.6s 0.3s ease-out forwards; text-align: center; }
+    .hero-nameplate-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.05rem, 2vw, 1.45rem); font-weight: 400; color: rgba(245,240,232,0.88); letter-spacing: 0.04em; line-height: 1.2; }
+    .hero-nameplate-meta { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,146,42,0.75); margin-top: 0.3rem; }
     .hero-sub { margin-top: 0.6rem; font-size: 0.95rem; font-weight: 300; color: rgba(245,240,232,0.45); max-width: 460px; line-height: 1.75; opacity: 0; animation: fadeUp 0.6s 1.3s ease-out forwards; }
     .hero-actions { margin-top: 2.25rem; display: flex; gap: 0.875rem; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fadeUp 0.6s 1.4s ease-out forwards; }
     .btn-primary { background: var(--gold); color: var(--navy); padding: 0.8rem 1.875rem; border-radius: var(--r-sm); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.02em; transition: background 0.2s, transform 0.15s; display: inline-block; min-height: 44px; }
@@ -496,14 +497,13 @@
 
 <!-- HERO -->
 <section class="hero" id="home" aria-label="Welcome">
-  <div class="hero-badge">
-    <div class="hero-badge-dot"></div>
-    <span class="hero-badge-text">Sowcarpet, Chennai · Since 1977</span>
+  <div class="hero-nameplate">
+    <p class="hero-nameplate-name">Hirachand Chordia Eye Hospital</p>
+    <p class="hero-nameplate-meta">Chennai &nbsp;·&nbsp; Estd. 1977</p>
   </div>
   <h1 class="hero-title">
     Affordable, Effective Eyecare<br><em>For Everyone.</em>
   </h1>
-  <p class="hero-name">Hirachand Chordia Eye Hospital <span>&nbsp;·&nbsp; Chennai &nbsp;·&nbsp; Estd. 1977</span></p>
   <p class="hero-sub">Serving for five decades.</p>
   <div class="hero-actions">
     <a href="#gallery" class="btn-outline">See Our Facility</a>
