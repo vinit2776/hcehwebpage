@@ -136,17 +136,17 @@
       border-top: 1px solid rgba(200,146,42,0.18);
       border-bottom: 1px solid rgba(200,146,42,0.18);
     }
-    .tl-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,146,42,0.55); text-align: center; margin-bottom: 1.75rem; }
+    .tl-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,146,42,0.8); text-align: center; margin-bottom: 1.75rem; }
     .tl-track { max-width: 900px; margin: 0 auto; }
     .tl-row { display: flex; align-items: flex-start; justify-content: space-between; position: relative; }
-    .tl-row::before { content: ''; position: absolute; top: 7px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(200,146,42,0.2) 8%, rgba(200,146,42,0.45) 50%, rgba(200,146,42,0.2) 92%, transparent); }
+    .tl-row::before { content: ''; position: absolute; top: 7px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(200,146,42,0.3) 8%, rgba(200,146,42,0.6) 50%, rgba(200,146,42,0.3) 92%, transparent); }
     .tl-node { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1; position: relative; z-index: 1; }
-    .tl-dot { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid rgba(200,146,42,0.4); background: var(--navy); }
+    .tl-dot { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid rgba(200,146,42,0.65); background: var(--navy); }
     .tl-node.active .tl-dot { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 12px rgba(200,146,42,0.55), 0 0 28px rgba(200,146,42,0.18); }
-    .tl-year { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(200,146,42,0.6); letter-spacing: 0.1em; }
+    .tl-year { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(200,146,42,0.9); letter-spacing: 0.1em; }
     .tl-node.active .tl-year { color: var(--gold-light); font-weight: 600; }
-    .tl-desc { font-size: 9px; color: rgba(245,240,232,0.28); letter-spacing: 0.03em; text-align: center; line-height: 1.6; max-width: 88px; }
-    .tl-node.active .tl-desc { color: rgba(232,196,122,0.6); }
+    .tl-desc { font-size: 10px; color: rgba(245,240,232,0.65); letter-spacing: 0.02em; text-align: center; line-height: 1.6; max-width: 88px; }
+    .tl-node.active .tl-desc { color: rgba(232,196,122,0.9); }
 
     /* MISSION */
     .mission { background: var(--ivory); padding: 5.5rem 2rem; text-align: center; }
@@ -286,18 +286,28 @@
     .csr-cert::before, .csr-cert::after { content: ''; position: absolute; width: 18px; height: 18px; border-color: rgba(200,146,42,0.5); border-style: solid; }
     .csr-cert::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; border-radius: 2px 0 0 0; }
     .csr-cert::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; border-radius: 0 0 2px 0; }
-    .csr-gov-line { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,146,42,0.5); line-height: 1.9; }
-    .csr-divider-thin { height: 1px; background: rgba(200,146,42,0.15); margin: 1.1rem 0; }
-    .csr-reg-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.3); margin-bottom: 0.35rem; }
+    .csr-gov-line { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(200,146,42,0.88); line-height: 2; }
+    .csr-divider-thin { height: 1px; background: rgba(200,146,42,0.25); margin: 1.1rem 0; }
+    .csr-reg-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,240,232,0.55); margin-bottom: 0.35rem; }
     .csr-number { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; color: var(--gold); letter-spacing: 0.05em; line-height: 1; margin-bottom: 0.2rem; }
-    .csr-pan-row { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(245,240,232,0.3); letter-spacing: 0.1em; margin-top: 0.9rem; }
-    .csr-date { font-family: 'DM Mono', monospace; font-size: 8.5px; color: rgba(245,240,232,0.22); letter-spacing: 0.08em; margin-top: 0.25rem; }
+    .csr-pan-row { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(245,240,232,0.65); letter-spacing: 0.1em; margin-top: 0.9rem; }
+    .csr-date { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(245,240,232,0.5); letter-spacing: 0.08em; margin-top: 0.25rem; }
     .csr-detail-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1.1rem; }
     .csr-detail-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 400; color: var(--ivory); line-height: 1.18; margin-bottom: 1rem; }
-    .csr-detail-body { font-size: 0.9rem; color: rgba(245,240,232,0.55); line-height: 1.8; margin-bottom: 1.5rem; }
-    .csr-quote { border-left: 2px solid rgba(200,146,42,0.3); padding-left: 1rem; }
-    .csr-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: rgba(245,240,232,0.45); line-height: 1.7; }
-    .csr-quote cite { display: block; font-style: normal; font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(200,146,42,0.45); margin-top: 0.6rem; }
+    .csr-detail-body { font-size: 0.9rem; color: rgba(245,240,232,0.72); line-height: 1.8; margin-bottom: 1.5rem; }
+    .csr-quote { border-left: 2px solid rgba(200,146,42,0.45); padding-left: 1rem; margin-bottom: 1.5rem; }
+    .csr-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: rgba(245,240,232,0.72); line-height: 1.7; }
+    .csr-quote cite { display: block; font-style: normal; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(200,146,42,0.7); margin-top: 0.6rem; }
+    .csr-view-cert { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-light); border: 1px solid rgba(200,146,42,0.35); border-radius: var(--r-sm); padding: 0.6rem 1rem; transition: background 0.2s, border-color 0.2s; cursor: pointer; background: rgba(200,146,42,0.06); }
+    .csr-view-cert:hover { background: rgba(200,146,42,0.14); border-color: rgba(200,146,42,0.6); }
+    .csr-view-cert svg { width: 13px; height: 13px; flex-shrink: 0; }
+    /* CERTIFICATE MODAL */
+    .cert-modal { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(14,35,64,0.88); backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 1.5rem; }
+    .cert-modal.open { display: flex; }
+    .cert-modal-inner { position: relative; max-width: 680px; width: 100%; background: #fff; border-radius: var(--r-md); overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.5); animation: fadeUp 0.25s ease-out; }
+    .cert-modal-inner img { display: block; width: 100%; height: auto; }
+    .cert-modal-close { position: absolute; top: 0.75rem; right: 0.75rem; width: 32px; height: 32px; border-radius: 50%; background: rgba(14,35,64,0.75); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; line-height: 1; transition: background 0.15s; }
+    .cert-modal-close:hover { background: var(--navy); }
 
     /* RECOGNITION */
     .recognition { background: #0a1a2e; padding: 5rem 2rem; text-align: center; }
@@ -957,9 +967,24 @@
         <p>"The entity has been registered for undertaking CSR activities."</p>
         <cite>— Ministry of Corporate Affairs, Govt. of India, 16 June 2021</cite>
       </div>
+      <button class="csr-view-cert" onclick="document.getElementById('cert-modal').classList.add('open')">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="1" width="10" height="13" rx="1.5"/><line x1="4.5" y1="5" x2="9.5" y2="5"/><line x1="4.5" y1="7.5" x2="9.5" y2="7.5"/><line x1="4.5" y1="10" x2="7.5" y2="10"/>
+          <circle cx="13" cy="12" r="2.5"/><line x1="14.8" y1="13.8" x2="16" y2="15"/>
+        </svg>
+        View Government Certificate
+      </button>
     </div>
   </div>
 </section>
+
+<!-- CERTIFICATE MODAL -->
+<div id="cert-modal" class="cert-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="cert-modal-inner">
+    <img src="images/csr-certificate.jpg" alt="Government of India — CSR Registration Certificate CSR00008939, Ministry of Corporate Affairs, 16 June 2021">
+    <button class="cert-modal-close" onclick="document.getElementById('cert-modal').classList.remove('open')" aria-label="Close">&times;</button>
+  </div>
+</div>
 
 <!-- DONATE -->
 <section class="donate" id="donate">
