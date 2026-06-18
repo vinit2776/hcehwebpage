@@ -275,6 +275,30 @@
     .equip-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
     .equip-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
 
+    /* CSR CREDENTIALS */
+    .csr { background: var(--navy); padding: 5rem 2rem; border-top: 1px solid rgba(200,146,42,0.15); }
+    .csr-inner { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: 300px 1fr; gap: 4rem; align-items: center; }
+    .csr-cert {
+      border: 1px solid rgba(200,146,42,0.32); border-radius: var(--r-md);
+      padding: 2rem 1.75rem; background: rgba(200,146,42,0.035);
+      text-align: center; position: relative;
+    }
+    .csr-cert::before, .csr-cert::after { content: ''; position: absolute; width: 18px; height: 18px; border-color: rgba(200,146,42,0.5); border-style: solid; }
+    .csr-cert::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; border-radius: 2px 0 0 0; }
+    .csr-cert::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; border-radius: 0 0 2px 0; }
+    .csr-gov-line { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,146,42,0.5); line-height: 1.9; }
+    .csr-divider-thin { height: 1px; background: rgba(200,146,42,0.15); margin: 1.1rem 0; }
+    .csr-reg-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.3); margin-bottom: 0.35rem; }
+    .csr-number { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; color: var(--gold); letter-spacing: 0.05em; line-height: 1; margin-bottom: 0.2rem; }
+    .csr-pan-row { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(245,240,232,0.3); letter-spacing: 0.1em; margin-top: 0.9rem; }
+    .csr-date { font-family: 'DM Mono', monospace; font-size: 8.5px; color: rgba(245,240,232,0.22); letter-spacing: 0.08em; margin-top: 0.25rem; }
+    .csr-detail-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1.1rem; }
+    .csr-detail-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 400; color: var(--ivory); line-height: 1.18; margin-bottom: 1rem; }
+    .csr-detail-body { font-size: 0.9rem; color: rgba(245,240,232,0.55); line-height: 1.8; margin-bottom: 1.5rem; }
+    .csr-quote { border-left: 2px solid rgba(200,146,42,0.3); padding-left: 1rem; }
+    .csr-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: rgba(245,240,232,0.45); line-height: 1.7; }
+    .csr-quote cite { display: block; font-style: normal; font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(200,146,42,0.45); margin-top: 0.6rem; }
+
     /* DONATE */
     .donate { background: var(--teal); padding: 5.5rem 2rem; text-align: center; }
     .donate .sec-title { color: var(--ivory); }
@@ -323,6 +347,8 @@
       .visiting-grid { grid-template-columns: repeat(2, 1fr); }
       .equip-grid { grid-template-columns: repeat(2, 1fr); }
       .donate-areas { grid-template-columns: repeat(2, 1fr); }
+      .csr-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .csr-cert { max-width: 320px; }
       .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 200px; }
       .g-slot.tall { grid-row: span 1; }
@@ -871,6 +897,33 @@
   </div>
 </section>
 
+<!-- CSR CREDENTIALS -->
+<section class="csr" id="transparency">
+  <div class="csr-inner">
+    <div class="csr-cert">
+      <p class="csr-gov-line">Government of India</p>
+      <p class="csr-gov-line">Ministry of Corporate Affairs</p>
+      <p class="csr-gov-line">Registrar of Companies</p>
+      <div class="csr-divider-thin"></div>
+      <p class="csr-reg-label">CSR Registration Number</p>
+      <p class="csr-number">CSR00008939</p>
+      <div class="csr-divider-thin"></div>
+      <p class="csr-reg-label">Siremull Hirachand Charitable Trust</p>
+      <p class="csr-pan-row">PAN &nbsp;·&nbsp; AAATS1303G</p>
+      <p class="csr-date">Registered 16 June 2021 &nbsp;·&nbsp; SRN T23254998</p>
+    </div>
+    <div>
+      <span class="csr-detail-label">Trust &amp; Transparency</span>
+      <h2 class="csr-detail-title">Formally recognised<br>for CSR activities</h2>
+      <p class="csr-detail-body">The Siremull Hirachand Charitable Trust — which governs this hospital — holds an official CSR registration issued by the Ministry of Corporate Affairs, Government of India. Corporates wishing to fulfil their CSR obligations through donations to our charitable eye hospital can do so with full statutory compliance.</p>
+      <div class="csr-quote">
+        <p>"The entity has been registered for undertaking CSR activities."</p>
+        <cite>— Ministry of Corporate Affairs, Govt. of India, 16 June 2021</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- DONATE -->
 <section class="donate" id="donate">
   <span class="mono-label">Support the Mission</span>
@@ -906,6 +959,11 @@
       <div>
         <p class="cd-label">Emergency Trauma Care</p>
         <p class="cd-value">Available — contact us directly</p>
+      </div>
+      <div>
+        <p class="cd-label">Registered Office</p>
+        <p class="cd-value">'Prakash Presidium', 5th Floor<br>110 Mahatma Gandhi Road<br>Nungambakkam, Chennai — 600 034</p>
+        <p class="cd-note"><a href="mailto:hceh@chordia.asia">hceh@chordia.asia</a></p>
       </div>
       <div>
         <p class="cd-label">Managed by</p>
