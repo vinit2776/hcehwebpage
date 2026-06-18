@@ -448,6 +448,16 @@
       .g-divider { display: none; }
       .g-rating-block { gap: 1.25rem; }
     }
+
+    /* ── SCROLL REVEAL SYSTEM ── */
+    .rv-up    { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); will-change: opacity, transform; }
+    .rv-left  { opacity: 0; transform: translateX(-36px); transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .rv-right { opacity: 0; transform: translateX(36px);  transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .rv-scale { opacity: 0; transform: scale(0.93);       transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1); }
+    .rv-visible { opacity: 1 !important; transform: none !important; }
+    @media (prefers-reduced-motion: reduce) {
+      .rv-up, .rv-left, .rv-right, .rv-scale { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -599,12 +609,12 @@
       <p class="stat-desc">Advanced micro-surgery at subsidised costs</p>
     </div>
     <div class="stat-item">
-      <span class="stat-number">250+</span>
+      <span class="stat-number" data-count="250" data-suffix="+">250+</span>
       <span class="stat-unit">Free Surgeries / Year</span>
       <p class="stat-desc">Performed at no cost for those who cannot afford care</p>
     </div>
     <div class="stat-item">
-      <span class="stat-number">5</span>
+      <span class="stat-number" data-count="5" data-suffix="">5</span>
       <span class="stat-unit">Decades of Service</span>
       <p class="stat-desc">Estd. 1977 — celebrating 50 years of compassionate eye care in 2027</p>
     </div>
@@ -1153,6 +1163,92 @@
   window.addEventListener('scroll', () => {
     nav.style.boxShadow = window.scrollY > 20 ? '0 1px 24px rgba(0,0,0,0.35)' : 'none';
   }, { passive: true });
+
+  // ── SCROLL REVEAL ──
+  (function () {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) return;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('rv-visible');
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -28px 0px' });
+
+    // Stagger helper — adds rv class + delay to each child, then observes
+    function stagger(containerSel, childSel, cls, gapMs) {
+      document.querySelectorAll(containerSel).forEach(wrap => {
+        wrap.querySelectorAll(childSel).forEach((el, i) => {
+          el.classList.add(cls);
+          el.style.transitionDelay = (i * gapMs) + 'ms';
+          io.observe(el);
+        });
+      });
+    }
+
+    // Section headings — simple fade-up
+    document.querySelectorAll('.sec-title, .mono-label').forEach(el => {
+      el.classList.add('rv-up'); io.observe(el);
+    });
+
+    // Mission
+    ['.mission-statement', '.mission-body', '.mission-trust'].forEach(s =>
+      document.querySelectorAll(s).forEach(el => { el.classList.add('rv-up'); io.observe(el); })
+    );
+
+    // Timeline — left to right
+    stagger('.tl-row', '.tl-node', 'rv-up', 90);
+
+    // Stats — staggered up
+    stagger('.stats-grid', '.stat-item', 'rv-up', 90);
+
+    // Gallery — staggered
+    stagger('.gallery-grid', '.g-slot', 'rv-scale', 55);
+
+    // Services
+    stagger('.services-grid', '.svc-item', 'rv-up', 60);
+
+    // Team cards
+    stagger('.team-grid', '.doc-card', 'rv-up', 80);
+
+    // CSR — cert from left, copy from right
+    const csrCert = document.querySelector('.csr-cert');
+    const csrCopy = document.querySelector('.csr-inner > div:last-child');
+    if (csrCert) { csrCert.classList.add('rv-left'); io.observe(csrCert); }
+    if (csrCopy) { csrCopy.classList.add('rv-right'); io.observe(csrCopy); }
+
+    // Donor recognition
+    stagger('.rec-grid', '.rec-card', 'rv-up', 80);
+
+    // Donate areas
+    stagger('.donate-areas', '.donate-area', 'rv-up', 65);
+  })();
+
+  // ── COUNTER ANIMATION ──
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = +el.dataset.count;
+        const suffix = el.dataset.suffix || '';
+        const dur = 1800;
+        const t0 = performance.now();
+        function tick(now) {
+          const p = Math.min((now - t0) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        cio.unobserve(el);
+      });
+    }, { threshold: 0.7 });
+    document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+  })();
 </script>
 </body>
 </html>
