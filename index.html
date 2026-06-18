@@ -139,7 +139,7 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      grid-template-rows: 300px 220px;
+      grid-template-rows: 300px 220px 300px 220px;
       gap: 4px; max-width: 1080px; margin: 0 auto;
     }
     .g-slot { position: relative; overflow: hidden; }
@@ -166,7 +166,10 @@
     /* TEAM */
     .team { background: var(--ivory); padding: 5.5rem 2rem; }
     .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 880px; margin: 0 auto 2.5rem; }
-    .doc-card { background: var(--white); border: 1px solid var(--ivory-dark); padding: 1.875rem; border-radius: var(--r-md); }
+    .doc-card { background: var(--white); border: 1px solid var(--ivory-dark); border-radius: var(--r-md); overflow: hidden; }
+    .doc-photo { width: 100%; height: 180px; object-fit: cover; object-position: center 15%; display: block; filter: brightness(0.95) contrast(1.05) saturate(0.92); transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+    .doc-card:hover .doc-photo { transform: scale(1.03); }
+    .doc-card-body { padding: 1.5rem 1.875rem 1.875rem; }
     .doc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--navy); margin-bottom: 0.15rem; }
     .doc-creds { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.08em; margin-bottom: 0.25rem; }
     .doc-role { font-size: 0.75rem; color: var(--teal); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
@@ -283,7 +286,7 @@
       .equip-grid { grid-template-columns: repeat(2, 1fr); }
       .donate-areas { grid-template-columns: repeat(2, 1fr); }
       .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 180px 180px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 200px; }
       .g-slot.tall { grid-row: span 1; }
     }
 
@@ -315,7 +318,7 @@
       .donate-highlight { padding: 1rem 1.25rem; }
       .contact { padding: 3.5rem 1.25rem 0; }
       .gallery { padding: 3.5rem 1.25rem; }
-      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 220px); }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 220px; }
       .g-slot.tall { grid-row: span 1; }
       .stats-grid { grid-template-columns: 1fr; }
       .stat-item { border-right: none !important; border-bottom: 1px solid rgba(200,146,42,0.12) !important; padding: 2rem 1.5rem; }
@@ -441,45 +444,77 @@
   </div>
   <div class="gallery-grid">
 
-    <!-- Placeholder: building exterior (tall — add real photo later) -->
-    <figure class="g-slot tall g-ph" aria-label="Building exterior photo placeholder">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-      <span class="g-ph-label">Hospital Building<br>&amp; Entrance</span>
-    </figure>
-
-    <!-- Real image: consultants & services board -->
-    <figure class="g-slot" style="margin:0;">
-      <img src="images/consultants-board.jpg" alt="HCEH notice board listing consultants, visiting specialists, and facilities. Established 1977." loading="lazy">
+    <!-- Surgical team — tall left column, rows 1–2 -->
+    <figure class="g-slot tall" style="margin:0;">
+      <img src="images/team-in-ot.jpg" alt="The HCEH surgical team in the operating theatre, ready for cataract surgery." loading="lazy">
       <div class="g-slot-overlay"></div>
-      <div class="g-slot-label">Est. 1977 · Consultants &amp; Services</div>
+      <div class="g-slot-label">Surgical Team · Operating Theatre</div>
     </figure>
 
-    <!-- Placeholder: OT / surgery room -->
-    <figure class="g-slot g-ph" aria-label="Operating theatre placeholder">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-      <span class="g-ph-label">Operating<br>Theatre</span>
+    <!-- Row 1: patient recovery -->
+    <figure class="g-slot" style="margin:0;">
+      <img src="images/patient-recovery-smile.jpg" alt="Patient smiling after successful cataract surgery with eye patch." loading="lazy" style="object-position: center top;">
+      <div class="g-slot-overlay"></div>
+      <div class="g-slot-label">Cataract Surgery · Recovery</div>
     </figure>
 
-    <!-- Placeholder: reception / waiting area -->
-    <figure class="g-slot g-ph" aria-label="Reception placeholder">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-      <span class="g-ph-label">Reception &amp;<br>Waiting Area</span>
+    <!-- Row 1: child eye exam -->
+    <figure class="g-slot" style="margin:0;">
+      <img src="images/child-eye-exam.jpg" alt="Young girl undergoing eye examination with trial lens frame." loading="lazy" style="object-position: center 30%;">
+      <div class="g-slot-overlay"></div>
+      <div class="g-slot-label">Paediatric Eye Examination</div>
     </figure>
 
-    <!-- Placeholder: team / doctors -->
-    <figure class="g-slot g-ph" aria-label="Team photo placeholder">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-      <span class="g-ph-label">Doctors &amp;<br>Team</span>
+    <!-- Row 2: slit lamp exam -->
+    <figure class="g-slot" style="margin:0;">
+      <img src="images/slit-lamp-exam.jpg" alt="Close-up of slit lamp examination showing light focused on patient's eye." loading="lazy" style="object-position: center 35%;">
+      <div class="g-slot-overlay"></div>
+      <div class="g-slot-label">Slit Lamp Examination</div>
     </figure>
 
-    <!-- Placeholder: consultation room / equipment -->
-    <figure class="g-slot g-ph" aria-label="Consultation room placeholder">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-      <span class="g-ph-label">Consultation<br>Room</span>
+    <!-- Row 2: glaucoma screening -->
+    <figure class="g-slot" style="margin:0;">
+      <img src="images/glaucoma-screening.jpg" alt="Doctor performing glaucoma pressure check on patient at an eye camp." loading="lazy" style="object-position: center 30%;">
+      <div class="g-slot-overlay"></div>
+      <div class="g-slot-label">Glaucoma Screening</div>
+    </figure>
+
+    <!-- Happy recovery — tall left column, rows 3–4 -->
+    <figure class="g-slot tall" style="margin:0;">
+      <img src="images/patient-happy-glasses.jpg" alt="Elderly woman laughing joyfully after receiving her vision back post-surgery." loading="lazy" style="object-position: center 20%;">
+      <div class="g-slot-overlay"></div>
+      <div class="g-slot-label">Vision Restored · Happy Recovery</div>
+    </figure>
+
+    <!-- Row 3: Dr. Sudarshan -->
+    <figure class="g-slot" style="margin:0;">
+      <img src="images/dr-sudarshan.jpg" alt="Dr. M.J. Sudarshan, Medical Director, at his consultation room with ophthalmoscope." loading="lazy" style="object-position: center 20%;">
+      <div class="g-slot-overlay"></div>
+      <div class="g-slot-label">Dr. M.J. Sudarshan · Medical Director</div>
+    </figure>
+
+    <!-- Row 3: Dr. Meenakshi -->
+    <figure class="g-slot" style="margin:0;">
+      <img src="images/dr-meenakshi.jpg" alt="Dr. R.M. Meenakshi, Consultant Ophthalmologist, at her consultation desk." loading="lazy" style="object-position: center 25%;">
+      <div class="g-slot-overlay"></div>
+      <div class="g-slot-label">Dr. R.M. Meenakshi · Consultant</div>
+    </figure>
+
+    <!-- Row 4: patient with family -->
+    <figure class="g-slot" style="margin:0;">
+      <img src="images/patient-family-happy.jpg" alt="Patient and family member smiling and celebrating restored sight." loading="lazy" style="object-position: center 30%;">
+      <div class="g-slot-overlay"></div>
+      <div class="g-slot-label">Patient &amp; Family · Vision Restored</div>
+    </figure>
+
+    <!-- Row 4: child with new glasses -->
+    <figure class="g-slot" style="margin:0;">
+      <img src="images/child-new-glasses.jpg" alt="Young girl wearing her new glasses alongside her grandmother after treatment." loading="lazy" style="object-position: center 20%;">
+      <div class="g-slot-overlay"></div>
+      <div class="g-slot-label">First Pair of Glasses</div>
     </figure>
 
   </div>
-  <p class="gallery-add-note">Add facility, team &amp; equipment photos to the images/ folder</p>
 </section>
 
 <!-- SERVICES -->
@@ -560,28 +595,40 @@
   </div>
   <div class="team-grid">
     <div class="doc-card">
-      <p class="doc-name">Dr. M.J. Sudarshan</p>
-      <p class="doc-creds">MBBS · DOMS · DNB</p>
-      <p class="doc-role">Medical Director</p>
-      <blockquote class="doc-quote">"I am inspired by the trust because they don't chase numbers. Even if we only have ten patients a month, what matters is making sure they all receive good treatment."</blockquote>
+      <img class="doc-photo" src="images/dr-sudarshan.jpg" alt="Dr. M.J. Sudarshan" loading="lazy">
+      <div class="doc-card-body">
+        <p class="doc-name">Dr. M.J. Sudarshan</p>
+        <p class="doc-creds">MBBS · DOMS · DNB</p>
+        <p class="doc-role">Medical Director</p>
+        <blockquote class="doc-quote">"I am inspired by the trust because they don't chase numbers. Even if we only have ten patients a month, what matters is making sure they all receive good treatment."</blockquote>
+      </div>
     </div>
     <div class="doc-card">
-      <p class="doc-name">Dr. R.M. Meenakshi</p>
-      <p class="doc-creds">MBBS · DO</p>
-      <p class="doc-role">Consultant Ophthalmologist</p>
-      <blockquote class="doc-quote">"I would recommend this hospital to young ophthalmologists — they can attend to a variety of cases and work in an ethical, encouraging environment."</blockquote>
+      <img class="doc-photo" src="images/dr-meenakshi.jpg" alt="Dr. R.M. Meenakshi" loading="lazy">
+      <div class="doc-card-body">
+        <p class="doc-name">Dr. R.M. Meenakshi</p>
+        <p class="doc-creds">MBBS · DO</p>
+        <p class="doc-role">Consultant Ophthalmologist</p>
+        <blockquote class="doc-quote">"I would recommend this hospital to young ophthalmologists — they can attend to a variety of cases and work in an ethical, encouraging environment."</blockquote>
+      </div>
     </div>
     <div class="doc-card">
-      <p class="doc-name">Dr. S. Ranjini Priya</p>
-      <p class="doc-creds">MBBS · DO · DNB</p>
-      <p class="doc-role">Consultant Ophthalmologist</p>
-      <blockquote class="doc-quote">"Each doctor sees about 50 patients a day, and I'm happy that I get to attend to a variety of cases. The patient-doctor relationship is also very good."</blockquote>
+      <img class="doc-photo" src="images/dr-ranjini.jpg" alt="Dr. S. Ranjini Priya" loading="lazy">
+      <div class="doc-card-body">
+        <p class="doc-name">Dr. S. Ranjini Priya</p>
+        <p class="doc-creds">MBBS · DO · DNB</p>
+        <p class="doc-role">Consultant Ophthalmologist</p>
+        <blockquote class="doc-quote">"Each doctor sees about 50 patients a day, and I'm happy that I get to attend to a variety of cases. The patient-doctor relationship is also very good."</blockquote>
+      </div>
     </div>
     <div class="doc-card">
-      <p class="doc-name">Dr. S. Premanand</p>
-      <p class="doc-creds">MS · DO</p>
-      <p class="doc-role">Consultant Ophthalmologist</p>
-      <blockquote class="doc-quote">"All of us work as a team and focus on helping our patients get better."</blockquote>
+      <img class="doc-photo" src="images/dr-premanand.jpg" alt="Dr. S. Premanand" loading="lazy">
+      <div class="doc-card-body">
+        <p class="doc-name">Dr. S. Premanand</p>
+        <p class="doc-creds">MS · DO</p>
+        <p class="doc-role">Consultant Ophthalmologist</p>
+        <blockquote class="doc-quote">"All of us work as a team and focus on helping our patients get better."</blockquote>
+      </div>
     </div>
   </div>
   <div class="visiting-block">
