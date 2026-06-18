@@ -357,6 +357,8 @@
     .cd-value { font-size: 0.925rem; color: rgba(245,240,232,0.75); line-height: 1.55; }
     .cd-value a:hover { color: var(--gold); }
     .cd-note { font-size: 0.78rem; color: rgba(245,240,232,0.4); margin-top: 0.2rem; line-height: 1.5; }
+    .trustees-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.25rem 1.25rem; margin-top: 0.5rem; }
+    .trustee-name { font-size: 0.75rem; color: rgba(245,240,232,0.38); line-height: 1.6; white-space: nowrap; }
     .footer-bar { max-width: 1080px; margin: 0 auto; padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: rgba(245,240,232,0.28); }
 
     /* ANIMATIONS */
@@ -1070,7 +1072,18 @@
       <div>
         <p class="cd-label">Managed by</p>
         <p class="cd-value">Siremull Hirachand Charitable Trust</p>
-        <p class="cd-note">Trustees: Loonchand, Vijay P., Diiliip, Rangroop, Hemant, Pradeep, Kailash, Devang &amp; Nirmal Chordia</p>
+        <p class="cd-note" style="margin-bottom:0.4rem;">Trustees</p>
+        <div class="trustees-grid">
+          <span class="trustee-name">Loonchand Chordia</span>
+          <span class="trustee-name">Rangroop Chordia</span>
+          <span class="trustee-name">Kailash Chordia</span>
+          <span class="trustee-name">Vijay Prakashchand Chordia</span>
+          <span class="trustee-name">Hemant Chordia</span>
+          <span class="trustee-name">Devang Chordia</span>
+          <span class="trustee-name">Diiliip Chordia</span>
+          <span class="trustee-name">Pradeep Chordia</span>
+          <span class="trustee-name">Nirmal Chordia</span>
+        </div>
       </div>
     </div>
   </div>
