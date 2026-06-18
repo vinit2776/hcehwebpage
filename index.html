@@ -22,6 +22,7 @@
       --white:      #FFFFFF;
       --r-sm: 4px;
       --r-md: 8px;
+      --bar-h:      34px;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -29,9 +30,28 @@
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
+    /* JUBILEE ANNOUNCEMENT BAR */
+    .jubilee-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 102;
+      height: var(--bar-h);
+      background: linear-gradient(90deg, #7A5210 0%, var(--gold) 20%, var(--gold-light) 50%, var(--gold) 80%, #7A5210 100%);
+      background-size: 200% 100%;
+      animation: shimmer-gold 6s linear infinite;
+      display: flex; align-items: center; justify-content: center; gap: 1rem;
+    }
+    .jubilee-bar-text {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--navy); white-space: nowrap;
+    }
+    .jubilee-bar-sep { font-size: 10px; color: rgba(14,35,64,0.4); }
+    @keyframes shimmer-gold {
+      0%   { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+
     /* NAV */
     .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed; top: var(--bar-h); left: 0; right: 0; z-index: 100;
       background: var(--navy);
       border-bottom: 1px solid rgba(200,146,42,0.2);
       padding: 0 2rem; height: 64px;
@@ -59,7 +79,7 @@
 
     /* MOBILE DRAWER */
     .nav-drawer {
-      display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      display: none; position: fixed; top: calc(64px + var(--bar-h)); left: 0; right: 0; z-index: 99;
       background: var(--navy); border-bottom: 1px solid rgba(200,146,42,0.2);
       padding: 0 1.5rem 1.25rem; flex-direction: column;
     }
@@ -73,7 +93,14 @@
     .hero {
       min-height: 100vh; background: var(--navy);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 7rem 2rem 5rem; position: relative; overflow: hidden;
+      text-align: center; padding: calc(7rem + var(--bar-h)) 2rem 5rem; position: relative; overflow: hidden;
+    }
+    /* JUBILEE SEAL */
+    .jubilee-seal {
+      position: absolute; right: 3.5rem; bottom: 3rem;
+      width: 108px; height: 108px; opacity: 0;
+      animation: fadeUp 0.7s 2s ease-out forwards;
+      pointer-events: none;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
@@ -103,12 +130,23 @@
     .btn-outline:hover { border-color: var(--gold); background: rgba(200,146,42,0.07); }
     .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(245,240,232,0.3); letter-spacing: 0.18em; text-transform: uppercase; opacity: 0; animation: fadeUp 0.6s 1.8s ease-out forwards; white-space: nowrap; }
 
-    /* 50-YEAR MILESTONE STRIP */
-    .milestone { background: var(--gold); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: center; }
-    .ms-year { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--navy); opacity: 0.55; flex-shrink: 0; }
-    .ms-center { flex: 1; max-width: 680px; display: flex; align-items: center; gap: 1rem; padding: 0 1.25rem; }
-    .ms-rule { flex: 1; height: 1px; background: rgba(14,35,64,0.2); }
-    .ms-label { font-family: 'Cormorant Garamond', serif; font-size: clamp(0.9rem, 2vw, 1.1rem); font-weight: 600; color: var(--navy); white-space: nowrap; letter-spacing: 0.01em; }
+    /* DECADE TIMELINE STRIP */
+    .milestone {
+      background: var(--navy); padding: 2.25rem 2rem 1.75rem;
+      border-top: 1px solid rgba(200,146,42,0.18);
+      border-bottom: 1px solid rgba(200,146,42,0.18);
+    }
+    .tl-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,146,42,0.55); text-align: center; margin-bottom: 1.75rem; }
+    .tl-track { max-width: 900px; margin: 0 auto; }
+    .tl-row { display: flex; align-items: flex-start; justify-content: space-between; position: relative; }
+    .tl-row::before { content: ''; position: absolute; top: 7px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(200,146,42,0.2) 8%, rgba(200,146,42,0.45) 50%, rgba(200,146,42,0.2) 92%, transparent); }
+    .tl-node { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1; position: relative; z-index: 1; }
+    .tl-dot { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid rgba(200,146,42,0.4); background: var(--navy); }
+    .tl-node.active .tl-dot { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 12px rgba(200,146,42,0.55), 0 0 28px rgba(200,146,42,0.18); }
+    .tl-year { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(200,146,42,0.6); letter-spacing: 0.1em; }
+    .tl-node.active .tl-year { color: var(--gold-light); font-weight: 600; }
+    .tl-desc { font-size: 9px; color: rgba(245,240,232,0.28); letter-spacing: 0.03em; text-align: center; line-height: 1.6; max-width: 88px; }
+    .tl-node.active .tl-desc { color: rgba(232,196,122,0.6); }
 
     /* MISSION */
     .mission { background: var(--ivory); padding: 5.5rem 2rem; text-align: center; }
@@ -294,15 +332,18 @@
     @media (max-width: 600px) {
       .nav { padding: 0 1.25rem; }
       .nav-logo-name { font-size: 13px; }
-      .hero { padding: 5rem 1.25rem 3.5rem; }
+      .jubilee-bar-text { font-size: 9px; letter-spacing: 0.14em; }
       .hero-sub { font-size: 0.95rem; max-width: 100%; }
       .hero-actions { flex-direction: column; align-items: stretch; gap: 0.75rem; }
       .hero-actions .btn-primary, .hero-actions .btn-outline { text-align: center; padding: 0.875rem 1.25rem; }
       .hero-scroll { display: none; }
-      .milestone { padding: 1rem 1rem; flex-wrap: nowrap; }
-      .ms-center { padding: 0 0.75rem; }
-      .ms-year { font-size: 10px; }
-      .ms-label { font-size: 0.85rem; }
+      .milestone { padding: 1.5rem 1rem 1.25rem; }
+      .tl-desc { display: none; }
+      .tl-year { font-size: 9px; letter-spacing: 0.06em; }
+      .tl-dot { width: 11px; height: 11px; }
+      .tl-row::before { top: 5px; }
+      .jubilee-seal { width: 80px; height: 80px; right: 1.25rem; bottom: 2rem; }
+      .hero { padding: calc(5rem + var(--bar-h)) 1.25rem 3.5rem; }
       .mission { padding: 3.5rem 1.25rem; }
       .services { padding: 3.5rem 1.25rem; }
       .services-grid { grid-template-columns: 1fr; }
@@ -336,6 +377,15 @@
   </style>
 </head>
 <body>
+
+<!-- GOLDEN JUBILEE ANNOUNCEMENT BAR -->
+<div class="jubilee-bar" role="banner" aria-label="Golden Jubilee announcement">
+  <span class="jubilee-bar-text">Golden Jubilee</span>
+  <span class="jubilee-bar-sep">·</span>
+  <span class="jubilee-bar-text">50 Years of Clear Vision</span>
+  <span class="jubilee-bar-sep">·</span>
+  <span class="jubilee-bar-text">1977 — 2027</span>
+</div>
 
 <!-- NAV -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -389,17 +439,70 @@
     <a href="#gallery" class="btn-outline">See Our Facility</a>
   </div>
   <p class="hero-scroll" aria-hidden="true">scroll to explore</p>
+
+  <!-- Golden Jubilee Commemorative Seal -->
+  <svg class="jubilee-seal" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Outer dashed ring -->
+    <circle cx="60" cy="60" r="56" stroke="#C8922A" stroke-width="1" stroke-dasharray="3.5 2.5" opacity="0.6"/>
+    <!-- Inner solid ring -->
+    <circle cx="60" cy="60" r="48" stroke="#C8922A" stroke-width="0.5" opacity="0.4"/>
+    <!-- 50 numeral -->
+    <text x="60" y="58" text-anchor="middle" dominant-baseline="middle" font-family="Cormorant Garamond, serif" font-size="30" fill="#C8922A" font-weight="300" opacity="0.9">50</text>
+    <!-- YEARS label -->
+    <text x="60" y="73" text-anchor="middle" font-family="DM Mono, monospace" font-size="6" fill="#C8922A" letter-spacing="5" opacity="0.7">YEARS</text>
+    <!-- Top arc: GOLDEN JUBILEE -->
+    <path id="seal-top" d="M 16,60 A 44,44 0 0,1 104,60"/>
+    <text font-family="DM Mono, monospace" font-size="7.5" fill="#C8922A" letter-spacing="3.5" opacity="0.75">
+      <textPath href="#seal-top" startOffset="50%" text-anchor="middle">GOLDEN JUBILEE</textPath>
+    </text>
+    <!-- Bottom arc: 1977 · HCEH · 2027 -->
+    <path id="seal-bot" d="M 16,60 A 44,44 0 0,0 104,60"/>
+    <text font-family="DM Mono, monospace" font-size="7" fill="#C8922A" letter-spacing="2.5" opacity="0.65">
+      <textPath href="#seal-bot" startOffset="50%" text-anchor="middle">1977 · HCEH · 2027</textPath>
+    </text>
+    <!-- Small star/diamond accents at sides -->
+    <circle cx="60" cy="12.5" r="2" fill="#C8922A" opacity="0.5"/>
+    <circle cx="60" cy="107.5" r="2" fill="#C8922A" opacity="0.5"/>
+  </svg>
 </section>
 
-<!-- 50-YEAR MILESTONE -->
-<div class="milestone" role="complementary" aria-label="50 years milestone">
-  <span class="ms-year">1977</span>
-  <div class="ms-center">
-    <div class="ms-rule" aria-hidden="true"></div>
-    <span class="ms-label">50 Years of Clear Vision in Chennai</span>
-    <div class="ms-rule" aria-hidden="true"></div>
+<!-- DECADE TIMELINE -->
+<div class="milestone" role="complementary" aria-label="50-year journey timeline">
+  <p class="tl-label">Our Journey · A Half-Century of Compassionate Care</p>
+  <div class="tl-track">
+    <div class="tl-row">
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <span class="tl-year">1977</span>
+        <span class="tl-desc">Founded by Siremull Hirachand Charitable Trust</span>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <span class="tl-year">1987</span>
+        <span class="tl-desc">A decade of affordable care for Chennai</span>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <span class="tl-year">1997</span>
+        <span class="tl-desc">Advanced micro-surgery introduced</span>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <span class="tl-year">2007</span>
+        <span class="tl-desc">Retina &amp; glaucoma speciality clinics</span>
+      </div>
+      <div class="tl-node">
+        <div class="tl-dot"></div>
+        <span class="tl-year">2017</span>
+        <span class="tl-desc">Zeiss IOL Master &amp; OCT imaging</span>
+      </div>
+      <div class="tl-node active">
+        <div class="tl-dot"></div>
+        <span class="tl-year">2027</span>
+        <span class="tl-desc">Golden Jubilee · 50 Years</span>
+      </div>
+    </div>
   </div>
-  <span class="ms-year">2027</span>
 </div>
 
 <!-- MISSION -->
