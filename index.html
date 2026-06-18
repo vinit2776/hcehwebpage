@@ -380,6 +380,36 @@
       .reviews-track { animation: none; }
     }
 
+    /* OPTICAL & PHARMACY */
+    .ancillary { overflow: hidden; }
+    .anc-split { display: grid; grid-template-columns: 1fr 1fr; }
+    .anc-panel { padding: 5rem 4rem; display: flex; align-items: flex-start; }
+    .anc-panel-inner { max-width: 440px; }
+    .anc-optical { background: #0a1a2e; }
+    .anc-pharmacy { background: var(--ivory); }
+    .anc-optical .mono-label { color: rgba(200,146,42,0.88); margin-bottom: 2rem; }
+    .anc-pharmacy .mono-label { color: var(--teal); margin-bottom: 2rem; }
+    .anc-illus { margin-bottom: 2rem; display: block; }
+    .anc-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 2.8vw, 2.4rem); font-weight: 400; line-height: 1.2; margin-bottom: 1rem; }
+    .anc-optical .anc-title { color: var(--ivory); }
+    .anc-optical .anc-title em { color: var(--gold); font-style: italic; }
+    .anc-pharmacy .anc-title { color: var(--navy); }
+    .anc-pharmacy .anc-title em { color: var(--teal); font-style: italic; }
+    .anc-body { font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .anc-optical .anc-body { color: rgba(245,240,232,0.72); }
+    .anc-pharmacy .anc-body { color: var(--muted); }
+    .anc-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 2rem; }
+    .anc-list li { font-size: 0.85rem; display: flex; align-items: baseline; gap: 0.6rem; }
+    .anc-optical .anc-list li { color: rgba(245,240,232,0.8); }
+    .anc-optical .anc-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+    .anc-pharmacy .anc-list li { color: var(--charcoal); }
+    .anc-pharmacy .anc-list li::before { content: '—'; color: var(--teal); flex-shrink: 0; }
+    .anc-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.45rem 0.875rem; border-radius: 100px; }
+    .anc-optical .anc-badge { color: var(--gold-light); border: 1px solid rgba(200,146,42,0.35); background: rgba(200,146,42,0.07); }
+    .anc-optical .anc-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .anc-pharmacy .anc-badge { color: var(--teal); border: 1px solid rgba(26,92,82,0.3); background: rgba(26,92,82,0.06); }
+    .anc-pharmacy .anc-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+
     /* RESPONSIVE — tablet */
     @media (max-width: 960px) {
       .nav-links { display: none; }
@@ -388,6 +418,9 @@
       .stat-item:nth-child(2) { border-right: none; }
       .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid rgba(200,146,42,0.12); }
       .stat-item:nth-child(3) { border-right: 1px solid rgba(200,146,42,0.12); }
+      .anc-split { grid-template-columns: 1fr; }
+      .anc-panel { padding: 3.5rem 2.5rem; }
+      .anc-panel-inner { max-width: 100%; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .team-grid { grid-template-columns: 1fr; }
       .visiting-grid { grid-template-columns: repeat(2, 1fr); }
@@ -431,6 +464,7 @@
       .pricing-cat { padding: 0.6rem 0.875rem; font-size: 9px; }
       .equipment { padding: 3.5rem 1.25rem; }
       .equip-grid { grid-template-columns: 1fr; }
+      .anc-panel { padding: 3rem 1.25rem; }
       .donate { padding: 3.5rem 1.25rem; }
       .donate-areas { grid-template-columns: 1fr; }
       .rec-grid { grid-template-columns: 1fr; }
@@ -769,6 +803,81 @@
       <p class="svc-name">Opticals &amp; Contact Lens</p>
       <p class="svc-desc">Prescription glasses and contact lenses at affordable rates, fitted on-site.</p>
     </div>
+  </div>
+</section>
+
+<!-- OPTICAL & PHARMACY -->
+<section class="ancillary" id="ancillary" aria-label="Optical shop and pharmacy">
+  <div class="anc-split">
+
+    <!-- OPTICAL SHOP -->
+    <div class="anc-panel anc-optical rv-left">
+      <div class="anc-panel-inner">
+        <span class="mono-label">In-House Optical Shop</span>
+
+        <!-- Spectacles SVG illustration -->
+        <svg class="anc-illus" width="160" height="64" viewBox="0 0 160 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Left temple arm -->
+          <line x1="2" y1="26" x2="14" y2="30" stroke="#C8922A" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Left lens frame -->
+          <rect x="14" y="14" width="54" height="36" rx="18" stroke="#C8922A" stroke-width="2.5"/>
+          <!-- Bridge -->
+          <path d="M68 32 C74 22 86 22 92 32" stroke="#C8922A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Right lens frame -->
+          <rect x="92" y="14" width="54" height="36" rx="18" stroke="#C8922A" stroke-width="2.5"/>
+          <!-- Right temple arm -->
+          <line x1="146" y1="30" x2="158" y2="26" stroke="#C8922A" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Left lens inner highlight -->
+          <ellipse cx="41" cy="29" rx="10" ry="7" stroke="rgba(200,146,42,0.2)" stroke-width="1"/>
+          <!-- Right lens inner highlight -->
+          <ellipse cx="119" cy="29" rx="10" ry="7" stroke="rgba(200,146,42,0.2)" stroke-width="1"/>
+        </svg>
+
+        <h2 class="anc-title">Frames for every face.<br><em>Prices for every pocket.</em></h2>
+        <p class="anc-body">Our in-house optical shop carries a broad selection of frames and prescription lenses — stocked and dispensed at subsidized rates so that good vision is never a question of affordability.</p>
+        <ul class="anc-list">
+          <li>Wide range of frames for all ages</li>
+          <li>Prescription lenses fitted on-site</li>
+          <li>Subsidized pricing — no compromise on quality</li>
+        </ul>
+        <div class="anc-badge">
+          <span class="anc-badge-dot"></span>
+          Subsidized for all patients
+        </div>
+      </div>
+    </div>
+
+    <!-- PHARMACY -->
+    <div class="anc-panel anc-pharmacy rv-right">
+      <div class="anc-panel-inner">
+        <span class="mono-label">In-House Pharmacy</span>
+
+        <!-- Rx SVG illustration -->
+        <svg class="anc-illus" width="80" height="64" viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- R of Rx -->
+          <path d="M12 52 L12 14 L36 14 C44 14 50 19 50 27 C50 33 46 37.5 40 39 L52 52" stroke="#1A5C52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M12 35 L38 35" stroke="#1A5C52" stroke-width="3" stroke-linecap="round"/>
+          <!-- x of Rx -->
+          <line x1="58" y1="38" x2="76" y2="54" stroke="#1A5C52" stroke-width="3" stroke-linecap="round"/>
+          <line x1="76" y1="38" x2="58" y2="54" stroke="#1A5C52" stroke-width="3" stroke-linecap="round"/>
+          <!-- Degree mark -->
+          <circle cx="54" cy="18" r="5" stroke="#1A5C52" stroke-width="2.5"/>
+        </svg>
+
+        <h2 class="anc-title">Every medication.<br><em>Right here.</em></h2>
+        <p class="anc-body">Our pharmacy stocks essential eye drops, post-operative medicines, and surgical supplies — dispensed at subsidized rates, so your recovery costs nothing more than it should.</p>
+        <ul class="anc-list">
+          <li>Eye drops and surgical medications</li>
+          <li>Post-operative care essentials</li>
+          <li>Genuine brands at fair, subsidized rates</li>
+        </ul>
+        <div class="anc-badge">
+          <span class="anc-badge-dot"></span>
+          Subsidized for all patients
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
